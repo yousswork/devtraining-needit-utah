@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_58872_needit.NeeditUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Utils Script Include for the NeedIt application.&#13;
+</description>
+        <mobile_callable>false</mobile_callable>
+        <name>NeeditUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var NeeditUtils = Class.create();
+NeeditUtils.prototype = {
+    initialize: function() {
+    },
+	isDatePast: function(strDate){
+		// Create GlideDateTime objects for the current date and the passed in date
+		var rightnow = new GlideDateTime();
+		var testdate = new GlideDateTime(strDate);
+		
+		// If the testdate is before rightnow, return true, else return false
+		if (testdate.before(rightnow)) {
+		return true;
+		}
+		else {
+		return false;
+		}
+  },
+  isDateToday: function(strDate){
+		var rightnow = new GlideDateTime();
+		var testdate = new GlideDateTime(strDate);
+		var today = rightnow.getLocalDate();
+		var isToday= testdate.getLocalDate();
+		var compareDates = today.compareTo(isToday);
+		if(compareDates == 0){
+			return true;
+		} else {
+			return false;
+		}
+  },
+    type: 'NeeditUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-03-13 10:21:41</sys_created_on>
+        <sys_id>e9480085c3d86210228b1453e401314b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>NeeditUtils</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_e9480085c3d86210228b1453e401314b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-13 10:43:38</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e9480085c3d86210228b1453e401314b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-03-13 10:21:41</sys_created_on>
+        <sys_id>e4a98481c3d86210228b1453e401310c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-13 10:21:41</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
